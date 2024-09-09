@@ -1,0 +1,45 @@
+def electrodomesticos():
+
+
+    ope=input("Quiere comprar a. Una Heladera \n b. Un TV \n c. Una Licuadora \n")
+    if ope=="a":
+        costo_electro=50000
+    elif ope=="b":
+        costo_electro=35000
+    else:
+        costo_electro=5000
+    print("Su gasto es de" , costo_electro)
+    return costo_electro
+
+
+def musica():
+    opm= input("Quiere comprar el disco de \n a. Queen \n b. Muse \n c. Los Beatles")
+    if opm=="a":
+        costo_musica=500
+    elif opm=="b":
+        costo_musica=300
+    else:
+        costo_musica=450
+    print("Su gasto es de" , costo_musica)
+    return costo_musica
+     
+nombre=input("Ingrese su nombre: ")
+print("Bienvenido" , nombre , "al sistema de Gabarino")
+
+
+op=input("Que desea comprar? \n a. Electrodomesticos \n b. Musica \n c. Ambos \n")
+if op== "a":
+    electrodomesticos()
+    print("Gracias por usar nuestro sistema")
+    exit()
+elif op=="b":
+    musica()
+    print("Gracias por usar nuestro sistema")
+    exit()
+else:
+    costo_ele=electrodomesticos()
+    costo_m=musica()
+    print("Su costo total es de", costo_ele+costo_m)
+
+
+exit()
