@@ -1,0 +1,28 @@
+print("Sistema de selección de deporte")
+
+genero=input("Indique su genero: ")
+edad=int(input("Indique su edad: "))
+altura=float(input("Indique su altura: "))
+
+es_hombre= genero== "hombre" or genero=="masculino" or genero=="varón"
+print("Es hombre?" , es_hombre)
+
+es_mayor= edad>=18
+print("Es mayor?" , es_mayor)
+
+es_alto= altura>=1.8
+print("Es alto?" , es_alto)
+
+rugby= es_hombre
+print("Puede jugar rugby:" , rugby )
+
+volley= not(es_hombre) and (altura>=1.8)
+print("Puede jugar volley: " , volley)
+
+basket= (es_hombre) and (es_alto)
+print("Puede jugar basket:" , basket)
+
+futbol= (es_hombre) and (edad<50)
+print("Puede jugar futbol:" , futbol)
+
+exit()
