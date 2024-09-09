@@ -1,0 +1,42 @@
+print("Bienvenido a Automotores Carlitos")
+
+
+monto=float(input("Ingrese el monto que desea gastar: "))
+if monto<100000:
+    print("No tenemos autos con valores inferiores a 1000000")
+    monto=float(input("Ingrese el monto nuevamente:"))
+    if monto<100000:
+        print("Dato erroneo, Gracias por usar nuestro servicio")
+        exit()
+
+
+marca=input("Que marca esta buscando? ")
+if marca !="Ford" and marca!="Chevrolet":
+    marca=input("Ingrese la marca nuevamente:")
+    if marca!= "Ford" and marca!="Chevrolet":
+        print("Lo sentimos, solo tenemos marca Ford y Chevrolet")
+        exit()
+
+
+puertas=float(input("Cantidad de puertas en el auto "))
+if puertas!= 3 and puertas!= 4 and puertas!= 5:
+    marca=input("Ingrese la cantidad de puertas nuevamente:")
+    if puertas!= 3 and puertas!= 4 and puertas!= 5:
+        print("Lo sentimos, solo tenemos autos de 3 a 5 puertas")
+        exit()
+
+
+if monto>=5000000 and marca=="Ford" and puertas== 3:
+    print("Le recomendamos la Ford Ranger")
+elif monto<=2000000 and marca=="Chevrolet" and (puertas== 3 or puertas== 5):
+    print("Le recomendamos el Chevrolet Corsa")
+elif monto<=4000000 and marca=="Ford" and puertas== 4:
+    print("Le recomendamos la Ford Eco Sport")
+elif (monto>=3000000 and monto<=6000000) and marca=="Chevrolet":
+    print("Le recomendamos la Chevrolet Tracker")
+else:
+    print("Lo sentimos, no tenemos autos con estas caracteristicas")
+
+
+print("Gracias por usar nuestro servicio")
+exit()
