@@ -1,0 +1,90 @@
+infantiles=["blancanieves","los tres chanchitos","cenicienta"]
+novelas=["don quijote", "la novicia revelde"]
+policiales=["sherlok holmes" , "muerte en el nilo"]
+
+def elegircategoria():
+    opcat=input("Que categoria desea ver? a.infantiles \n b.novelas \n c.policiales")
+    if opcat=="a":
+        print(infantiles)
+        menu()
+    elif opcat=="b":
+        print(novelas)
+        menu()
+    elif opcat=="c":
+        print(policiales)
+        menu()
+    else:
+        print("Ingrese la opcion nuevamente")
+        elegircategoria()
+
+def eliminarlibro():
+    eliminar=input("Que libro desea eliminar?")
+    if eliminar in infantiles:
+        infantiles.remove(eliminar)
+        print("Libro eliminado")
+        menu()
+    elif eliminar in novelas:
+        novelas.remove(eliminar)
+        print("Libro eliminado")
+        menu()
+    elif eliminar in policiales:
+        policiales.remove(eliminar)
+        print("Libro eliminado")
+        menu()
+    else:
+        print("Lo sentimos" , eliminar , "no esta en nuestro stock")
+        eliminarlibro()
+
+def agregarlibro():
+    cat=input("A que categoria quiere agregar un libro? a.infantiles \n b.novelas \n c.policiales")
+    if cat=="a":
+        libroaagregar=input("Que libro desea agregar? ")
+        infantiles.append(libroaagregar)
+        print("Libro agregado")
+        menu()
+    elif cat=="b":
+        libroaagregar=input("Que libro desea agregar? ")
+        novelas.append(libroaagregar)
+        print("Libro agregado")
+        menu()
+    elif cat=="c":
+        libroaagregar=input("Que libro desea agregar? ")
+        policiales.append(libroaagregar)
+        print("Libro agregado")
+        menu()
+    else:
+        print("Esta categoria no existe, intente nuevamente")
+        agregarlibro()
+
+def verstock():
+    libro=input("De que libro desea ver el stock?")
+    if libro in infantiles:
+        print("Actualmente hay" ,infantiles.count(libro), "libro en stock de", libro)
+        menu()
+    elif libro in novelas:
+        print("Actualmente hay" ,novelas.count(libro), "libro en stock de", libro)
+        menu()
+    elif libro in policiales:
+        print("Actualmente hay" ,policiales.count(libro), "libro en stock de", libro)
+        menu()
+    else:
+        print("Lo sentimos" , libro , "no esta en nuestro stock")
+        verstock()
+
+def menu():
+    print("Bienvenido al sistema de gestión online de la biblioteca Nacional")
+
+    op=input("Que quiere realizar: \n a.Ver libros disponibles \n b.Eliminar Libros \n c.Agregar \n d.Ver Stock \n e.Salir del sistema \n")
+    if op== "a":
+        elegircategoria()
+    elif op=="b":
+        eliminarlibro()
+    elif op== "c":
+        agregarlibro()
+    elif op=="d":
+        verstock()
+    elif op=="e":
+        print("Gracias por usar nuestro sistema")
+        exit()
+
+menu()
