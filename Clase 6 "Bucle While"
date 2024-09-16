@@ -1,0 +1,22 @@
+i=3
+
+num=int(input("Jugador 1, Ingrese un numero entre 1 y 10 "))
+
+while num <0 and num >10 :
+    int(num=input("Ingrese el numero nuevamente "))
+
+adnum=int(input("Jugador 2, adivine el numero "))
+
+while adnum!= num:   
+    i=i-1
+    
+    if i==0:
+      print("Te quedaste sin intentos")
+      break
+    
+    print("Te quedan", i , "intentos")
+    adnum=int(input("Ingrese el numero nuevamente "))
+
+
+print("Acertaste, tienes " , (i*10) , "puntos")
+
